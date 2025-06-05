@@ -1,0 +1,195 @@
+/* 日中モード */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f6f8fa;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-area input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.input-area button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.done-text {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+button.delete-btn,
+button.move-btn {
+    background: #d33;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+button.delete-btn:hover {
+    background: #a11;
+}
+
+button.move-btn {
+    background: #6c757d;
+}
+
+button.move-btn:hover {
+    background: #495057;
+}
+
+.progress-slider {
+    flex: 1;
+    max-width: 120px;
+}
+
+.progress-label {
+    min-width: 40px;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #eee;
+    height: 12px;
+    border-radius: 6px;
+    margin-top: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #4caf50;
+    transition: width 0.3s ease;
+    border-radius: 6px 0 0 6px;
+}
+
+canvas {
+    display: block;
+    margin-right: 10px;
+}
+
+#todo-input {
+    width: 410px;
+    resize: vertical; /* ユーザーが縦方向にサイズ変更できる */
+    font-size: 1rem;
+    padding: 8px;
+}
+
+.todo-text {
+  white-space: pre-wrap;  /* 改行・スペースをそのまま表示 */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 3em;
+    max-height: 10em;
+    line-height: 1.5;
+    font-size: 1rem;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ダークモード */
+body.dark-mode {
+    background: #121e2d;  /* 濃いネイビーブルー */
+    color: #e0e6f0;       /* 明るめのブルーグレー */
+}
+
+body.dark-mode h1 {
+    color: #ffffff;
+}
+
+body.dark-mode li {
+    background: #aeae47;
+    color: #e0e6f0;
+}
+
+body.dark-mode .input-area input[type="text"],
+body.dark-mode textarea {
+    background: #1c2a40;
+    color: #ffffff;
+    border: 1px solid #3c4a5f;
+}
+
+body.dark-mode .input-area button {
+    background: #2563eb; /* 青 */
+    color: #ffffff;
+}
+
+body.dark-mode .input-area button:hover {
+    background: #1d4ed8;
+}
+
+body.dark-mode .progress-bar {
+    background: #2c3e50;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .progress-bar-fill {
+    background: #3b82f6; /* アクティブな青 */
+}
+
+body.dark-mode .delete-btn {
+    background: #e11d48; /* 濃い赤ピンク */
+}
+
+body.dark-mode .delete-btn:hover {
+    background: #be123c;
+}
+
+body.dark-mode .move-btn {
+    background: #475569; /* スレートブルー */
+}
+
+body.dark-mode .move-btn:hover {
+    background: #334155;
+}
