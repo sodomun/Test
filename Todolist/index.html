@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Chart.jsを読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- アイコン -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+</head>
+<body>
+
+    <h1>Todo List</h1>
+    <div class="input-area">
+        <textarea id="todo-input" placeholder="やることを入力"></textarea> <!-- 自動的にautocomplete="on"になって, 検索候補が現れる -->
+        <button id="add-btn"></button>
+    </div>
+    <ul id="todo-list"></ul>
+    <div class="progress-bar">
+        <div class="progress-bar-fill" style="width: 40%"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
