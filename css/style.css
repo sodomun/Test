@@ -1,0 +1,125 @@
+/* css */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f6f8fa;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-area input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.input-area button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.done-text {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+button.delete-btn,
+button.move-btn {
+    background: #d33;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+button.delete-btn:hover {
+    background: #a11;
+}
+
+button.move-btn {
+    background: #6c757d;
+}
+
+button.move-btn:hover {
+    background: #495057;
+}
+
+.progress-slider {
+    flex: 1;
+    max-width: 120px;
+}
+
+.progress-label {
+    min-width: 40px;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.progress-bar {
+    background: #eee;
+    border-radius: 4px;
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    background: #28a745;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+canvas {
+    display: block;
+    margin-right: 10px;
+}
+
+#todo-input {
+    width: 410px;
+    resize: vertical; /* ユーザーが縦方向にサイズ変更できる */
+    font-size: 1rem;
+    padding: 8px;
+}
+
+.todo-text {
+  white-space: pre-wrap;  /* 改行・スペースをそのまま表示 */
+}
