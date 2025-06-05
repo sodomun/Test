@@ -11,6 +11,8 @@ const inputEl = document.getElementById('todo-input');
 const addBtn = document.getElementById('add-btn');
 const todoListEl = document.getElementById('todo-list');
 
+addBtn.innerHTML = '<i class="fas fa-plus"></i> 追加'; // +追加ボタンアイコンの表示の修正
+
 let todos = loadTodos();
 
 function renderTodos() {
@@ -115,6 +117,8 @@ function renderTodos() {
         li.appendChild(delBtn);
         todoListEl.appendChild(li);
     });
+
+    updateOverallProgressBar(); // 平均バー
 }
 
 function addTodo() {
@@ -130,16 +134,41 @@ function addTodo() {
 addBtn.addEventListener('click', addTodo); // ユーザの操作に反応する処理
 
 inputEl.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        if (e.shiftKey) {
-            // Shift + Enter → 改行を許可（何もしない）
-            return;
-        } else {
-            // Enterのみ → ToDo追加
-            e.preventDefault(); // 改行キャンセル
-            addTodo();
-        }
+    if (e.key === 'Enter' && !e.shiftKey) { // Shift+Enterで改行
+        // PC/スマホでEnter押しても追加されないようにする
+        e.preventDefault();
     }
 });
 
+// 全体の平均進捗バー
+function updateOverallProgressBar() {
+    const barFill = document.querySelector('.progress-bar-fill');
+    if (!barFill || todos.length === 0) {
+        barFill.style.width = '0%';
+        return;
+    }
+
+    const total = todos.reduce((sum, todo) => sum + todo.progress, 0);
+    const average = total / todos.length;
+    barFill.style.width = `${average}%`;
+}
+
 renderTodos();
+
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+function applyTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    document.body.classList.toggle('dark-mode', isDark);
+    themeToggleBtn.innerHTML = isDark
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+}
+
+themeToggleBtn.addEventListener('click', () => {
+    const newTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    applyTheme();
+});
+
+applyTheme(); // 初期読み込み
